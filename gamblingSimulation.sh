@@ -47,3 +47,11 @@ N=0
 unset array
 unset array1
 }
+function gamble20Days(){
+for((i=1;i<=20;i++))
+do
+        gambling
+done
+echo "he won" $WON_COUNT "times"
+echo "he lost" $LOSE_COUNT "times"
+}
