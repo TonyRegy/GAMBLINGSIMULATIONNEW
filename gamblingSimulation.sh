@@ -55,3 +55,19 @@ done
 echo "he won" $WON_COUNT "times"
 echo "he lost" $LOSE_COUNT "times"
 }
+function luckyUnlucky(){
+gamble20Days
+for((j=1;j<=20;j++))
+do
+if [ ${array3[$j]} -le ${array3[$(($j-1))]} ]
+then
+        array3[$j]=${array3[$(($j-1))]}
+fi
+if [ ${array4[$j] -le ${array4[$(($j-1))]} ]
+then
+        array4[$j]=${array4[$(($j-1))]}
+fi
+done
+echo "luckiest day earning is" ${array3[-1]}
+echo "unluckiest day loss is" ${array4[-1]}
+}
