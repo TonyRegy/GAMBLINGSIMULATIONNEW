@@ -71,3 +71,16 @@ done
 echo "luckiest day earning is" ${array3[-1]}
 echo "unluckiest day loss is" ${array4[-1]}
 }
+function continueGamblingOrNot(){
+luckyUnlucky
+totalGain=$(IFS=+; echo "$((${array3[*]}))")
+totalLoss=$(IFS=+; echo "$((${array4[*]}))")
+lossGainMargin=$(($totalGain - $totalLoss))
+if [ $lossGainMargin -gt 0]
+then
+        echo "continue gambling"
+else
+        echo "stop gambling"
+fi
+}
+continueGamblingOrNot
